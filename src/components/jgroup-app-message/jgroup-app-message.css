@@ -1,0 +1,16 @@
+@import 'ckeditor5-content.css';
+
+:host {
+  display: block;
+}
+
+.ck-content a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ck-content a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}

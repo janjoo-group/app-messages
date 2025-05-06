@@ -1,0 +1,2 @@
+import{p as e,b as p}from"./p-CZDkFMwQ.js";export{s as setNonce}from"./p-CZDkFMwQ.js";import{g as a}from"./p-DQuL1Twl.js";var r=()=>{const s=import.meta.url;const p={};if(s!==""){p.resourcesUrl=new URL(".",s).href}return e(p)};r().then((async e=>{await a();return p([["p-afd0c4f3",[[1,"jgroup-app-messages",{appKey:[1,"app-key"],appSectionKey:[1,"app-section-key"],userIdentifier:[1,"user-identifier"],messages:[32]}],[1,"jgroup-app-message",{heading:[1],message:[1],type:[1]}]]]],e)}));
+//# sourceMappingURL=jgroup-app-messages.esm.js.map
