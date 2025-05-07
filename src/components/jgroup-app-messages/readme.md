@@ -7,11 +7,12 @@
 
 ## Properties
 
-| Property         | Attribute         | Description                                | Type     | Default     |
-| ---------------- | ----------------- | ------------------------------------------ | -------- | ----------- |
-| `appKey`         | `app-key`         | The app key to fetch messages for.         | `string` | `undefined` |
-| `appSectionKey`  | `app-section-key` | The section key to fetch messages for.     | `string` | `undefined` |
-| `userIdentifier` | `user-identifier` | The user identifier to fetch messages for. | `string` | `undefined` |
+| Property         | Attribute         | Description                                | Type                | Default     |
+| ---------------- | ----------------- | ------------------------------------------ | ------------------- | ----------- |
+| `appKey`         | `app-key`         | The app key to fetch messages for.         | `string`            | `undefined` |
+| `appSectionKey`  | `app-section-key` | The section key to fetch messages for.     | `string`            | `undefined` |
+| `theme`          | `theme`           | The theme of the messages.                 | `"dark" \| "light"` | `'light'`   |
+| `userIdentifier` | `user-identifier` | The user identifier to fetch messages for. | `string`            | `undefined` |
 
 
 ## Dependencies

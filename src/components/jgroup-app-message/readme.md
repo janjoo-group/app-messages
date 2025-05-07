@@ -11,6 +11,7 @@
 | --------- | --------- | ------------------------------- | --------------------------------------------- | ----------- |
 | `heading` | `heading` | The heading of the message.     | `string`                                      | `undefined` |
 | `message` | `message` | The message to display.         | `string`                                      | `undefined` |
+| `theme`   | `theme`   | The theme of the message.       | `"dark" \| "light"`                           | `'light'`   |
 | `type`    | `type`    | The type of message to display. | `"error" \| "info" \| "success" \| "warning"` | `'info'`    |
 
 

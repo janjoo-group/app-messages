@@ -17,6 +17,10 @@ export declare class JgroupAppMessages {
      * @internal
      */
     apiUrl: string;
+    /**
+     * The theme of the messages.
+     */
+    theme: 'light' | 'dark';
     messages: any[];
     private getUserIdentifier;
     private getUserFingerprint;

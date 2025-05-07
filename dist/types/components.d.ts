@@ -16,6 +16,10 @@ export namespace Components {
          */
         "message": string;
         /**
+          * The theme of the message.
+         */
+        "theme": 'light' | 'dark';
+        /**
           * The type of message to display.
          */
         "type": 'warning' | 'error' | 'info' | 'success';
@@ -33,6 +37,10 @@ export namespace Components {
           * The section key to fetch messages for.
          */
         "appSectionKey": string;
+        /**
+          * The theme of the messages.
+         */
+        "theme": 'light' | 'dark';
         /**
           * The user identifier to fetch messages for.
          */
@@ -87,6 +95,10 @@ declare namespace LocalJSX {
          */
         "onDismiss"?: (event: JgroupAppMessageCustomEvent<number>) => void;
         /**
+          * The theme of the message.
+         */
+        "theme"?: 'light' | 'dark';
+        /**
           * The type of message to display.
          */
         "type"?: 'warning' | 'error' | 'info' | 'success';
@@ -100,6 +112,10 @@ declare namespace LocalJSX {
           * The section key to fetch messages for.
          */
         "appSectionKey"?: string;
+        /**
+          * The theme of the messages.
+         */
+        "theme"?: 'light' | 'dark';
         /**
           * The user identifier to fetch messages for.
          */

@@ -23,44 +23,89 @@ export class JgroupAppMessage {
   @Prop() type: 'warning' | 'error' | 'info' | 'success' = 'info';
 
   /**
+   * The theme of the message.
+   */
+  @Prop() theme: 'light' | 'dark' = 'light';
+
+  /**
    * Event emitted when the message is dismissed.
    */
   @Event() dismiss: EventEmitter<number>;
 
   get classes() {
+    const lightTheme = {
+      warning: {
+        container: 'border-yellow-400 bg-yellow-50 text-yellow-800',
+        icon: 'text-yellow-400',
+        heading: 'text-yellow-800',
+        message: 'text-yellow-700',
+        button: 'bg-yellow-50 text-yellow-500 hover:bg-yellow-100 focus:ring-yellow-600',
+      },
+      error: {
+        container: 'border-red-400 bg-red-50 text-red-800',
+        icon: 'text-red-400',
+        heading: 'text-red-800',
+        message: 'text-red-700',
+        button: 'bg-red-50 text-red-500 hover:bg-red-100 focus:ring-red-600',
+      },
+      info: {
+        container: 'border-blue-400 bg-blue-50 text-blue-800',
+        icon: 'text-blue-400',
+        heading: 'text-blue-800',
+        message: 'text-blue-700',
+        button: 'bg-blue-50 text-blue-500 hover:bg-blue-100 focus:ring-blue-600',
+      },
+      success: {
+        container: 'border-green-400 bg-green-50 text-green-800',
+        icon: 'text-green-400',
+        heading: 'text-green-800',
+        message: 'text-green-700',
+        button: 'bg-green-50 text-green-500 hover:bg-green-100 focus:ring-green-600',
+      },
+    };
+
+    const darkTheme = {
+      warning: {
+      container: 'border-yellow-400 bg-neutral-800 text-neutral-200',
+      icon: 'text-yellow-400',
+      heading: 'text-neutral-200',
+      message: 'text-neutral-300',
+      button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
+      },
+      error: {
+      container: 'border-red-400 bg-neutral-800 text-neutral-200',
+      icon: 'text-red-400',
+      heading: 'text-neutral-200',
+      message: 'text-neutral-300',
+      button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
+      },
+      info: {
+      container: 'border-blue-400 bg-neutral-800 text-neutral-200',
+      icon: 'text-blue-400',
+      heading: 'text-neutral-200',
+      message: 'text-neutral-300',
+      button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
+      },
+      success: {
+      container: 'border-green-400 bg-neutral-800 text-neutral-200',
+      icon: 'text-green-400',
+      heading: 'text-neutral-200',
+      message: 'text-neutral-300',
+      button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
+      },
+    };
+
+    const themeClasses = this.theme === 'dark' ? darkTheme : lightTheme;
+
     switch (this.type) {
       case 'warning':
-        return {
-          container: 'border-yellow-400 bg-yellow-50 text-yellow-800',
-          icon: 'text-yellow-400',
-          heading: 'text-yellow-800',
-          message: 'text-yellow-700',
-          button: 'bg-yellow-50 text-yellow-500 hover:bg-yellow-100 focus:ring-yellow-600',
-        };
+        return themeClasses.warning;
       case 'error':
-        return {
-          container: 'border-red-400 bg-red-50 text-red-800',
-          icon: 'text-red-400',
-          heading: 'text-red-800',
-          message: 'text-red-700',
-          button: 'bg-red-50 text-red-500 hover:bg-red-100 focus:ring-red-600',
-        };
+        return themeClasses.error;
       case 'info':
-        return {
-          container: 'border-blue-400 bg-blue-50 text-blue-800',
-          icon: 'text-blue-400',
-          heading: 'text-blue-800',
-          message: 'text-blue-700',
-          button: 'bg-blue-50 text-blue-500 hover:bg-blue-100 focus:ring-blue-600',
-        };
+        return themeClasses.info;
       case 'success':
-        return {
-          container: 'border-green-400 bg-green-50 text-green-800',
-          icon: 'text-green-400',
-          heading: 'text-green-800',
-          message: 'text-green-700',
-          button: 'bg-green-50 text-green-500 hover:bg-green-100 focus:ring-green-600',
-        };
+        return themeClasses.success;
       default:
         return {
           container: '',

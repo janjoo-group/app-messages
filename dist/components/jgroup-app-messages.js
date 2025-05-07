@@ -1,5 +1,5 @@
 import { p as proxyCustomElement, H, h } from './index.js';
-import { d as defineCustomElement$2 } from './p-DmmU8mw-.js';
+import { d as defineCustomElement$2 } from './p-BoT9vgRx.js';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -3292,6 +3292,10 @@ const JgroupAppMessages$1 = /*@__PURE__*/ proxyCustomElement(class JgroupAppMess
      * @internal
      */
     apiUrl = 'https://stats.jgroup.se/api';
+    /**
+     * The theme of the messages.
+     */
+    theme = 'light';
     messages = [];
     async getUserIdentifier() {
         return this.userIdentifier || (await this.getUserFingerprint());
@@ -3333,7 +3337,7 @@ const JgroupAppMessages$1 = /*@__PURE__*/ proxyCustomElement(class JgroupAppMess
         this.fetchMessages();
     }
     render() {
-        return (h("div", { key: '841356a1829d6b873109f3124f9538c47cf99b61', class: "grid grid-cols-1 gap-4" }, this.messages.map(message => (h("jgroup-app-message", { heading: message.title, message: message.message, type: message.type, onDismiss: () => this.onDismiss(message.id) })))));
+        return (h("div", { key: '2128d18cba0a51ecad2544b31e0474c55b3257f0', class: "grid grid-cols-1 gap-4" }, this.messages.map(message => (h("jgroup-app-message", { heading: message.title, message: message.message, type: message.type, theme: this.theme, onDismiss: () => this.onDismiss(message.id) })))));
     }
     static get style() { return jgroupAppMessagesCss; }
 }, [1, "jgroup-app-messages", {
@@ -3341,6 +3345,7 @@ const JgroupAppMessages$1 = /*@__PURE__*/ proxyCustomElement(class JgroupAppMess
         "appSectionKey": [1, "app-section-key"],
         "userIdentifier": [1, "user-identifier"],
         "apiUrl": [1, "api-url"],
+        "theme": [1],
         "messages": [32]
     }]);
 function defineCustomElement$1() {

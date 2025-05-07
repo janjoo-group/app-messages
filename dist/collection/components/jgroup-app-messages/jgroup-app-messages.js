@@ -19,6 +19,10 @@ export class JgroupAppMessages {
      * @internal
      */
     apiUrl = 'https://stats.jgroup.se/api';
+    /**
+     * The theme of the messages.
+     */
+    theme = 'light';
     messages = [];
     async getUserIdentifier() {
         return this.userIdentifier || (await this.getUserFingerprint());
@@ -60,7 +64,7 @@ export class JgroupAppMessages {
         this.fetchMessages();
     }
     render() {
-        return (h("div", { key: '841356a1829d6b873109f3124f9538c47cf99b61', class: "grid grid-cols-1 gap-4" }, this.messages.map(message => (h("jgroup-app-message", { heading: message.title, message: message.message, type: message.type, onDismiss: () => this.onDismiss(message.id) })))));
+        return (h("div", { key: '2128d18cba0a51ecad2544b31e0474c55b3257f0', class: "grid grid-cols-1 gap-4" }, this.messages.map(message => (h("jgroup-app-message", { heading: message.title, message: message.message, type: message.type, theme: this.theme, onDismiss: () => this.onDismiss(message.id) })))));
     }
     static get is() { return "jgroup-app-messages"; }
     static get encapsulation() { return "shadow"; }
@@ -155,6 +159,26 @@ export class JgroupAppMessages {
                 "setter": false,
                 "reflect": false,
                 "defaultValue": "'https://stats.jgroup.se/api'"
+            },
+            "theme": {
+                "type": "string",
+                "attribute": "theme",
+                "mutable": false,
+                "complexType": {
+                    "original": "'light' | 'dark'",
+                    "resolved": "\"dark\" | \"light\"",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [],
+                    "text": "The theme of the messages."
+                },
+                "getter": false,
+                "setter": false,
+                "reflect": false,
+                "defaultValue": "'light'"
             }
         };
     }

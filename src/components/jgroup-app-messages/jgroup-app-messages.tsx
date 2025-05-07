@@ -29,6 +29,11 @@ export class JgroupAppMessages {
    */
   @Prop() apiUrl: string = 'https://stats.jgroup.se/api';
 
+  /**
+   * The theme of the messages.
+   */
+  @Prop() theme: 'light' | 'dark' = 'light';
+
   @State() messages = [];
 
   private async getUserIdentifier(): Promise<string> {
@@ -93,6 +98,7 @@ export class JgroupAppMessages {
             heading={message.title}
             message={message.message}
             type={message.type}
+            theme={this.theme}
             onDismiss={() => this.onDismiss(message.id)}
           />
         ))}

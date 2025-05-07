@@ -13,6 +13,10 @@ export declare class JgroupAppMessage {
      */
     type: 'warning' | 'error' | 'info' | 'success';
     /**
+     * The theme of the message.
+     */
+    theme: 'light' | 'dark';
+    /**
      * Event emitted when the message is dismissed.
      */
     dismiss: EventEmitter<number>;
