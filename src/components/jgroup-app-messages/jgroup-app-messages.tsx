@@ -22,6 +22,13 @@ export class JgroupAppMessages {
    */
   @Prop() userIdentifier: string;
 
+  /**
+   * The API URL to fetch messages from.
+   *
+   * @internal
+   */
+  @Prop() apiUrl: string = 'https://stats.jgroup.se/api';
+
   @State() messages = [];
 
   private async getUserIdentifier(): Promise<string> {
@@ -39,7 +46,7 @@ export class JgroupAppMessages {
     const params = new URLSearchParams();
     params.append('user_identifier', await this.getUserIdentifier());
 
-    const url = new URL(`http://stats.test/api/app-messages/${this.appKey}/${this.appSectionKey}`);
+    const url = new URL(`${this.apiUrl}/app-messages/${this.appKey}/${this.appSectionKey}`);
     url.search = params.toString();
 
     const response = await fetch(url.toString());
@@ -61,7 +68,7 @@ export class JgroupAppMessages {
     const params = new URLSearchParams();
     params.append('user_identifier', await this.getUserIdentifier());
 
-    const url = new URL(`http://stats.test/api/app-messages/${this.appKey}/${this.appSectionKey}/${messageId}`);
+    const url = new URL(`${this.apiUrl}/app-messages/${this.appKey}/${this.appSectionKey}/${messageId}`);
     url.search = params.toString();
 
     const response = await fetch(url.toString(), {

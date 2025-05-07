@@ -13,6 +13,12 @@ export class JgroupAppMessages {
      * The user identifier to fetch messages for.
      */
     userIdentifier;
+    /**
+     * The API URL to fetch messages from.
+     *
+     * @internal
+     */
+    apiUrl = 'https://stats.jgroup.se/api';
     messages = [];
     async getUserIdentifier() {
         return this.userIdentifier || (await this.getUserFingerprint());
@@ -25,7 +31,7 @@ export class JgroupAppMessages {
     async fetchMessages() {
         const params = new URLSearchParams();
         params.append('user_identifier', await this.getUserIdentifier());
-        const url = new URL(`http://stats.test/api/app-messages/${this.appKey}/${this.appSectionKey}`);
+        const url = new URL(`${this.apiUrl}/app-messages/${this.appKey}/${this.appSectionKey}`);
         url.search = params.toString();
         const response = await fetch(url.toString());
         if (!response.ok) {
@@ -40,7 +46,7 @@ export class JgroupAppMessages {
         this.messages = this.messages.filter(message => message.id !== messageId);
         const params = new URLSearchParams();
         params.append('user_identifier', await this.getUserIdentifier());
-        const url = new URL(`http://stats.test/api/app-messages/${this.appKey}/${this.appSectionKey}/${messageId}`);
+        const url = new URL(`${this.apiUrl}/app-messages/${this.appKey}/${this.appSectionKey}/${messageId}`);
         url.search = params.toString();
         const response = await fetch(url.toString(), {
             method: 'DELETE',
@@ -54,7 +60,7 @@ export class JgroupAppMessages {
         this.fetchMessages();
     }
     render() {
-        return (h("div", { key: 'f26ede091d6811601fac5724221d5436621c5d12', class: "grid grid-cols-1 gap-4" }, this.messages.map(message => (h("jgroup-app-message", { heading: message.title, message: message.message, type: message.type, onDismiss: () => this.onDismiss(message.id) })))));
+        return (h("div", { key: '841356a1829d6b873109f3124f9538c47cf99b61', class: "grid grid-cols-1 gap-4" }, this.messages.map(message => (h("jgroup-app-message", { heading: message.title, message: message.message, type: message.type, onDismiss: () => this.onDismiss(message.id) })))));
     }
     static get is() { return "jgroup-app-messages"; }
     static get encapsulation() { return "shadow"; }
@@ -126,6 +132,29 @@ export class JgroupAppMessages {
                 "getter": false,
                 "setter": false,
                 "reflect": false
+            },
+            "apiUrl": {
+                "type": "string",
+                "attribute": "api-url",
+                "mutable": false,
+                "complexType": {
+                    "original": "string",
+                    "resolved": "string",
+                    "references": {}
+                },
+                "required": false,
+                "optional": false,
+                "docs": {
+                    "tags": [{
+                            "name": "internal",
+                            "text": undefined
+                        }],
+                    "text": "The API URL to fetch messages from."
+                },
+                "getter": false,
+                "setter": false,
+                "reflect": false,
+                "defaultValue": "'https://stats.jgroup.se/api'"
             }
         };
     }

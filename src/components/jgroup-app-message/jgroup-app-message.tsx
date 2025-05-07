@@ -72,16 +72,16 @@ export class JgroupAppMessage {
     }
   }
 
-  private renderIcon() {
+  private renderIcon(className: string) {
     switch (this.type) {
       case 'warning':
-        return <WarningIcon class={this.classes.icon} />;
+        return <WarningIcon class={`${className} ${this.classes.icon}`} />;
       case 'error':
-        return <ErrorIcon class={this.classes.icon} />;
+        return <ErrorIcon class={`${className} ${this.classes.icon}`} />;
       case 'info':
-        return <InfoIcon class={this.classes.icon} />;
+        return <InfoIcon class={`${className} ${this.classes.icon}`} />;
       case 'success':
-        return <SuccessIcon class={this.classes.icon} />;
+        return <SuccessIcon class={`${className} ${this.classes.icon}`} />;
       default:
         return null;
     }
@@ -95,10 +95,10 @@ export class JgroupAppMessage {
     return (
       <div class={`border-l-4 border-solid p-4 ${this.classes.container}`}>
         <div class="flex">
-          <div class="shrink-0">{this.renderIcon()}</div>
-          <div class="ml-3">
-            <h3 class={`text-sm font-medium ${this.classes.heading}`}>{this.heading}</h3>
-            <div class={`mt-2 text-sm ck-content ${this.classes.message}`} innerHTML={this.message}></div>
+          <div class="shrink-0">{this.renderIcon('size-8')}</div>
+          <div class="ml-3 mt-1">
+            <h3 class={`text-md font-medium ${this.classes.heading}`}>{this.heading}</h3>
+            <div class={`mt-2 text-md ck-content ${this.classes.message}`} innerHTML={this.message}></div>
           </div>
           <div class="ml-auto pl-3">
             <div class="-mx-1.5 -my-1.5">
@@ -108,7 +108,7 @@ export class JgroupAppMessage {
                 onClick={() => this.dismissMessage()}
               >
                 <span class="sr-only">Dismiss</span>
-                <CloseIcon />
+                <CloseIcon class="size-5" />
               </button>
             </div>
           </div>

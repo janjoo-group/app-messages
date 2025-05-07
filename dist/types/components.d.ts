@@ -22,6 +22,10 @@ export namespace Components {
     }
     interface JgroupAppMessages {
         /**
+          * The API URL to fetch messages from.
+         */
+        "apiUrl": string;
+        /**
           * The app key to fetch messages for.
          */
         "appKey": string;

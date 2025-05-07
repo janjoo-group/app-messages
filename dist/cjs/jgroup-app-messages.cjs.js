@@ -19,7 +19,7 @@ var patchBrowser = () => {
 
 patchBrowser().then(async (options) => {
   await appGlobals.globalScripts();
-  return index.bootstrapLazy([["jgroup-app-message_2.cjs",[[1,"jgroup-app-messages",{"appKey":[1,"app-key"],"appSectionKey":[1,"app-section-key"],"userIdentifier":[1,"user-identifier"],"messages":[32]}],[1,"jgroup-app-message",{"heading":[1],"message":[1],"type":[1]}]]]], options);
+  return index.bootstrapLazy([["jgroup-app-message_2.cjs",[[1,"jgroup-app-messages",{"appKey":[1,"app-key"],"appSectionKey":[1,"app-section-key"],"userIdentifier":[1,"user-identifier"],"apiUrl":[1,"api-url"],"messages":[32]}],[1,"jgroup-app-message",{"heading":[1],"message":[1],"type":[1]}]]]], options);
 });
 
 exports.setNonce = index.setNonce;

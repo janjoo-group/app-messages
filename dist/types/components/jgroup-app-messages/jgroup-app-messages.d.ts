@@ -11,6 +11,12 @@ export declare class JgroupAppMessages {
      * The user identifier to fetch messages for.
      */
     userIdentifier: string;
+    /**
+     * The API URL to fetch messages from.
+     *
+     * @internal
+     */
+    apiUrl: string;
     messages: any[];
     private getUserIdentifier;
     private getUserFingerprint;

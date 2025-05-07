@@ -1,5 +1,5 @@
 import { p as proxyCustomElement, H, h } from './index.js';
-import { d as defineCustomElement$2 } from './p-kjNnxdua.js';
+import { d as defineCustomElement$2 } from './p-DmmU8mw-.js';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -3286,6 +3286,12 @@ const JgroupAppMessages$1 = /*@__PURE__*/ proxyCustomElement(class JgroupAppMess
      * The user identifier to fetch messages for.
      */
     userIdentifier;
+    /**
+     * The API URL to fetch messages from.
+     *
+     * @internal
+     */
+    apiUrl = 'https://stats.jgroup.se/api';
     messages = [];
     async getUserIdentifier() {
         return this.userIdentifier || (await this.getUserFingerprint());
@@ -3298,7 +3304,7 @@ const JgroupAppMessages$1 = /*@__PURE__*/ proxyCustomElement(class JgroupAppMess
     async fetchMessages() {
         const params = new URLSearchParams();
         params.append('user_identifier', await this.getUserIdentifier());
-        const url = new URL(`http://stats.test/api/app-messages/${this.appKey}/${this.appSectionKey}`);
+        const url = new URL(`${this.apiUrl}/app-messages/${this.appKey}/${this.appSectionKey}`);
         url.search = params.toString();
         const response = await fetch(url.toString());
         if (!response.ok) {
@@ -3313,7 +3319,7 @@ const JgroupAppMessages$1 = /*@__PURE__*/ proxyCustomElement(class JgroupAppMess
         this.messages = this.messages.filter(message => message.id !== messageId);
         const params = new URLSearchParams();
         params.append('user_identifier', await this.getUserIdentifier());
-        const url = new URL(`http://stats.test/api/app-messages/${this.appKey}/${this.appSectionKey}/${messageId}`);
+        const url = new URL(`${this.apiUrl}/app-messages/${this.appKey}/${this.appSectionKey}/${messageId}`);
         url.search = params.toString();
         const response = await fetch(url.toString(), {
             method: 'DELETE',
@@ -3327,13 +3333,14 @@ const JgroupAppMessages$1 = /*@__PURE__*/ proxyCustomElement(class JgroupAppMess
         this.fetchMessages();
     }
     render() {
-        return (h("div", { key: 'f26ede091d6811601fac5724221d5436621c5d12', class: "grid grid-cols-1 gap-4" }, this.messages.map(message => (h("jgroup-app-message", { heading: message.title, message: message.message, type: message.type, onDismiss: () => this.onDismiss(message.id) })))));
+        return (h("div", { key: '841356a1829d6b873109f3124f9538c47cf99b61', class: "grid grid-cols-1 gap-4" }, this.messages.map(message => (h("jgroup-app-message", { heading: message.title, message: message.message, type: message.type, onDismiss: () => this.onDismiss(message.id) })))));
     }
     static get style() { return jgroupAppMessagesCss; }
 }, [1, "jgroup-app-messages", {
         "appKey": [1, "app-key"],
         "appSectionKey": [1, "app-section-key"],
         "userIdentifier": [1, "user-identifier"],
+        "apiUrl": [1, "api-url"],
         "messages": [32]
     }]);
 function defineCustomElement$1() {

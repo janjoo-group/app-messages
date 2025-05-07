@@ -61,16 +61,16 @@ export class JgroupAppMessage {
                 };
         }
     }
-    renderIcon() {
+    renderIcon(className) {
         switch (this.type) {
             case 'warning':
-                return h(WarningIcon, { class: this.classes.icon });
+                return h(WarningIcon, { class: `${className} ${this.classes.icon}` });
             case 'error':
-                return h(ErrorIcon, { class: this.classes.icon });
+                return h(ErrorIcon, { class: `${className} ${this.classes.icon}` });
             case 'info':
-                return h(InfoIcon, { class: this.classes.icon });
+                return h(InfoIcon, { class: `${className} ${this.classes.icon}` });
             case 'success':
-                return h(SuccessIcon, { class: this.classes.icon });
+                return h(SuccessIcon, { class: `${className} ${this.classes.icon}` });
             default:
                 return null;
         }
@@ -79,7 +79,7 @@ export class JgroupAppMessage {
         this.dismiss.emit();
     }
     render() {
-        return (h("div", { key: '4984882a7653f8ea9d6147f62386bf17d47d563e', class: `border-l-4 border-solid p-4 ${this.classes.container}` }, h("div", { key: '075d6439568cee970279cb51d5e69998a1f5bf6c', class: "flex" }, h("div", { key: '34ca298b2810fae6f6e1b70b915c3e3e8c63bfda', class: "shrink-0" }, this.renderIcon()), h("div", { key: '44189d164767cc394a200849280a692c7fc81880', class: "ml-3" }, h("h3", { key: '62b85c92c6f104e74112d0e2120bbb53829eb152', class: `text-sm font-medium ${this.classes.heading}` }, this.heading), h("div", { key: 'e9ba47c81fc2d7887527dc592513fd09913895dc', class: `mt-2 text-sm ck-content ${this.classes.message}`, innerHTML: this.message })), h("div", { key: '9343c07b71fa8fabbb45b265917162d8a5215beb', class: "ml-auto pl-3" }, h("div", { key: 'e0bb42c474b7649a91efaa9f2ebd44a124097dfa', class: "-mx-1.5 -my-1.5" }, h("button", { key: 'ea756c93c98d5d92622fe41cf6d20b945258498f', type: "button", class: `inline-flex rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 ${this.classes.button}`, onClick: () => this.dismissMessage() }, h("span", { key: '192b907deba5063fa534cbf3f441073a8bb0cd2d', class: "sr-only" }, "Dismiss"), h(CloseIcon, { key: 'cfa97126f198989ed9cfe9d963b4dc4257b50cb7' })))))));
+        return (h("div", { key: '1d76f9ccccd144eaec64206a0f9914207c72b54e', class: `border-l-4 border-solid p-4 ${this.classes.container}` }, h("div", { key: 'c071ba0d174c0dd2ee4380dced7e36cca1310280', class: "flex" }, h("div", { key: 'd1425f1315ed9df97a2fe8cc505cdbdc4b98b2ad', class: "shrink-0" }, this.renderIcon('size-8')), h("div", { key: '4bfdc473c18512e1c5ab2fff996818da7e6d7a81', class: "ml-3 mt-1" }, h("h3", { key: 'f0e2c26d7f3d9479488b67fc9fce0cbbf6c70449', class: `text-md font-medium ${this.classes.heading}` }, this.heading), h("div", { key: '93ae0f9b6750d78cb29e205de3d71c41b54a68b4', class: `mt-2 text-md ck-content ${this.classes.message}`, innerHTML: this.message })), h("div", { key: '87184768e4bd33164f7340a4d0b6dd690a3f4c6c', class: "ml-auto pl-3" }, h("div", { key: 'e90107eeb70b1acb1336a338b9e9062d53b1bb8c', class: "-mx-1.5 -my-1.5" }, h("button", { key: 'f5fb4866196bbb335f03cca1808e67320db4507f', type: "button", class: `inline-flex rounded-md p-1.5 focus:outline-none focus:ring-2 focus:ring-offset-2 ${this.classes.button}`, onClick: () => this.dismissMessage() }, h("span", { key: '1b66741ac3702abbdc1444f50380eecc5d3d2365', class: "sr-only" }, "Dismiss"), h(CloseIcon, { key: '090a1e43be79042a674c16726d9910f9756aef3d', class: "size-5" })))))));
     }
     static get is() { return "jgroup-app-message"; }
     static get encapsulation() { return "shadow"; }

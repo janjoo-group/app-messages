@@ -6,7 +6,7 @@ interface IconProps {
 
 export const WarningIcon: FunctionalComponent<IconProps> = ({ class: className }) => (
   <svg
-    class={`size-5 ${className || ''}`}
+    class={`${className || ''}`}
     viewBox="0 0 20 20"
     fill="currentColor"
     aria-hidden="true"
@@ -22,7 +22,7 @@ export const WarningIcon: FunctionalComponent<IconProps> = ({ class: className }
 
 export const ErrorIcon: FunctionalComponent<IconProps> = ({ class: className }) => (
   <svg
-    class={`size-5 ${className || ''}`}
+    class={`${className || ''}`}
     viewBox="0 0 20 20"
     fill="currentColor"
     aria-hidden="true"
@@ -38,7 +38,7 @@ export const ErrorIcon: FunctionalComponent<IconProps> = ({ class: className }) 
 
 export const SuccessIcon: FunctionalComponent<IconProps> = ({ class: className }) => (
   <svg
-    class={`size-5 ${className || ''}`}
+    class={`${className || ''}`}
     viewBox="0 0 20 20"
     fill="currentColor"
     aria-hidden="true"
@@ -54,7 +54,7 @@ export const SuccessIcon: FunctionalComponent<IconProps> = ({ class: className }
 
 export const InfoIcon: FunctionalComponent<IconProps> = ({ class: className }) => (
   <svg
-    class={`size-5 ${className || ''}`}
+    class={`${className || ''}`}
     viewBox="0 0 20 20"
     fill="currentColor"
     aria-hidden="true"
@@ -70,7 +70,7 @@ export const InfoIcon: FunctionalComponent<IconProps> = ({ class: className }) =
 
 export const CloseIcon: FunctionalComponent<IconProps> = ({ class: className }) => (
   <svg
-    class={`size-5 ${className || ''}`}
+    class={`${className || ''}`}
     viewBox="0 0 20 20"
     fill="currentColor"
     aria-hidden="true"
