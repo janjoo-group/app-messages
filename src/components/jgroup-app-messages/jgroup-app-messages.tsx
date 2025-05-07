@@ -92,7 +92,7 @@ export class JgroupAppMessages {
 
   render() {
     return (
-      <div class="grid grid-cols-1 gap-4">
+      <div class={`grid grid-cols-1 gap-4 ${this.messages.length > 0 ? 'mb-4' : ''}`}>
         {this.messages.map(message => (
           <jgroup-app-message
             heading={message.title}
