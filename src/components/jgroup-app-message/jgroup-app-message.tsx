@@ -66,32 +66,32 @@ export class JgroupAppMessage {
 
     const darkTheme = {
       warning: {
-      container: 'border-yellow-400 bg-neutral-800 text-neutral-200',
-      icon: 'text-yellow-400',
-      heading: 'text-neutral-200',
-      message: 'text-neutral-300',
-      button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
+        container: 'border-yellow-400 bg-neutral-800 text-neutral-200',
+        icon: 'text-yellow-400',
+        heading: 'text-neutral-200',
+        message: 'text-neutral-300',
+        button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
       },
       error: {
-      container: 'border-red-400 bg-neutral-800 text-neutral-200',
-      icon: 'text-red-400',
-      heading: 'text-neutral-200',
-      message: 'text-neutral-300',
-      button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
+        container: 'border-red-400 bg-neutral-800 text-neutral-200',
+        icon: 'text-red-400',
+        heading: 'text-neutral-200',
+        message: 'text-neutral-300',
+        button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
       },
       info: {
-      container: 'border-blue-400 bg-neutral-800 text-neutral-200',
-      icon: 'text-blue-400',
-      heading: 'text-neutral-200',
-      message: 'text-neutral-300',
-      button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
+        container: 'border-blue-400 bg-neutral-800 text-neutral-200',
+        icon: 'text-blue-400',
+        heading: 'text-neutral-200',
+        message: 'text-neutral-300',
+        button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
       },
       success: {
-      container: 'border-green-400 bg-neutral-800 text-neutral-200',
-      icon: 'text-green-400',
-      heading: 'text-neutral-200',
-      message: 'text-neutral-300',
-      button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
+        container: 'border-green-400 bg-neutral-800 text-neutral-200',
+        icon: 'text-green-400',
+        heading: 'text-neutral-200',
+        message: 'text-neutral-300',
+        button: 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 focus:ring-neutral-500',
       },
     };
 
@@ -138,7 +138,7 @@ export class JgroupAppMessage {
 
   render() {
     return (
-      <div class={`border-l-4 border-solid p-4 ${this.classes.container}`}>
+      <div class={`border-l-4 border-solid p-4 fade-in ${this.classes.container}`}>
         <div class="flex">
           <div class="shrink-0">{this.renderIcon('size-8')}</div>
           <div class="ml-3 mt-1">

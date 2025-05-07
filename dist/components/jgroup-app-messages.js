@@ -1,5 +1,5 @@
 import { p as proxyCustomElement, H, h } from './index.js';
-import { d as defineCustomElement$2 } from './p-BoT9vgRx.js';
+import { d as defineCustomElement$2 } from './p-CN6J-O8N.js';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.

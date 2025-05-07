@@ -1,4 +1,4 @@
-import { J as JgroupAppMessage$1, d as defineCustomElement$1 } from './p-BoT9vgRx.js';
+import { J as JgroupAppMessage$1, d as defineCustomElement$1 } from './p-CN6J-O8N.js';
 
 const JgroupAppMessage = JgroupAppMessage$1;
 const defineCustomElement = defineCustomElement$1;
